@@ -46,8 +46,8 @@ modifications = [("deaN", Counter({"H": -1, "N": 1, "O": 1})),
                  ("carC", Counter({"C": 2, "H": 4, "N": 2, "O": 1}))]
 
 for symbol, formula in aminoacids.items():
-    symbols = re.findall("\D+", formula)
-    atom_counts = [int(x) for x in re.findall("\d+", formula)]
+    symbols = re.findall(r"\D+", formula)
+    atom_counts = [int(x) for x in re.findall(r"\d+", formula)]
     C = Counter(dict(zip(symbols, atom_counts)))
     daminoacids[symbol] = C
 

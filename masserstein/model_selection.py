@@ -38,11 +38,11 @@ def generate_random_spectrum(target_mass, elements):
         m = Spectrum(e).confs[0][0]
         if m > target_mass:
             continue
-        u = random.randint(0, target_mass // m)
+        u = random.randint(0, int(target_mass // m))
         composition[e] = u
         target_mass -= m * u
     H_mass = Spectrum("H").confs[0][0]
-    composition["H"] = np.round(target_mass / H_mass)
+    composition["H"] = int(np.round(target_mass / H_mass))
     spectrum = Spectrum(
         "".join(f"{k}{int(v)}" for k, v in sorted(composition.items()) if v != 0)
     )
@@ -51,9 +51,9 @@ def generate_random_spectrum(target_mass, elements):
 
 def get_composition(formula):
     composition = dict()
-    for element_and_potential_number in re.findall("[A-Z][a-z]*\d*", formula):
-        element = re.findall("[A-Z][a-z]*", element_and_potential_number)[0]
-        potential_number = re.findall("\d+$", element_and_potential_number)
+    for element_and_potential_number in re.findall(r"[A-Z][a-z]*\d*", formula):
+        element = re.findall(r"[A-Z][a-z]*", element_and_potential_number)[0]
+        potential_number = re.findall(r"\d+$", element_and_potential_number)
         number = int(potential_number[0]) if potential_number else 1
         composition[element] = number
     return composition
