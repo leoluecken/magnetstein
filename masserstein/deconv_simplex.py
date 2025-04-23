@@ -86,7 +86,7 @@ def dualdeconv2(exp_sp, thr_sps, penalty, quiet=True, solver=LpSolverDefault):
                 print("Interval lengths computed")
 
         # linear program:
-        program = lp.LpProblem('Dual L1 regression sparse', lp.LpMaximize)
+        program = lp.LpProblem('Dual-L1-regression-sparse', lp.LpMaximize)
         if not quiet:
                 print("Linear program initialized")
         # variables:
@@ -202,7 +202,7 @@ def dualdeconv2_alternative(exp_sp, thr_sps, penalty, quiet=True, solver=LpSolve
                 print("Interval lengths computed")
 
         # linear program:
-        program = lp.LpProblem('Dual L1 regression sparse', lp.LpMaximize)
+        program = lp.LpProblem('Dual-L1-regression-sparse', lp.LpMaximize)
         if not quiet:
                 print("Linear program initialized")
         # variables:
@@ -326,7 +326,7 @@ def dualdeconv3(exp_sp, thr_sps, penalty, penalty_th, quiet=True, solver=LpSolve
                 print("Interval lengths computed")
 
         # linear program:
-        program = lp.LpProblem('Dual L1 regression sparse', lp.LpMaximize)
+        program = lp.LpProblem('Dual-L1-regression-sparse', lp.LpMaximize)
         if not quiet:
                 print("Linear program initialized")
 
@@ -475,7 +475,7 @@ def dualdeconv4(exp_sp, thr_sps, penalty, penalty_th, quiet=True, solver=LpSolve
                 print("Interval lengths computed")
 
         # linear program:
-        program = lp.LpProblem('Dual L1 regression sparse', lp.LpMaximize)
+        program = lp.LpProblem('Dual-L1-regression-sparse', lp.LpMaximize)
         if not quiet:
                 print("Linear program initialized")
 
